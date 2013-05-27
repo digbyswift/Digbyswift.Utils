@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1B674245-2D2C-40D9-BCC4-BF4148416271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digbyswift.Utils.Tests", "Digbyswift.Utils.Tests\Digbyswift.Utils.Tests.csproj", "{CBF527EE-7BC6-454D-9B48-95C570E589DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digbyswift.Utils", "Digbyswift.Utils\Digbyswift.Utils.csproj", "{ABB33B15-2F64-435D-A4EF-C36B0FEBFDFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBF527EE-7BC6-454D-9B48-95C570E589DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF527EE-7BC6-454D-9B48-95C570E589DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF527EE-7BC6-454D-9B48-95C570E589DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF527EE-7BC6-454D-9B48-95C570E589DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB33B15-2F64-435D-A4EF-C36B0FEBFDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB33B15-2F64-435D-A4EF-C36B0FEBFDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB33B15-2F64-435D-A4EF-C36B0FEBFDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB33B15-2F64-435D-A4EF-C36B0FEBFDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBF527EE-7BC6-454D-9B48-95C570E589DF} = {1B674245-2D2C-40D9-BCC4-BF4148416271}
+	EndGlobalSection
+EndGlobal
