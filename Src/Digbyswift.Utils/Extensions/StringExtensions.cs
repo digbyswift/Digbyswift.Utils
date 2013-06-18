@@ -9,6 +9,9 @@ namespace Digbyswift.Utils.Extensions
 	public static class StringExtensions
 	{
 
+        private static readonly char[] ReservedRegexChars = new[] { '[', '\\', '^', '$', '.', '|', '*', '+', '?', '(', ')' };
+
+
 		#region Methods: ToTitleCase
 
 		/// <summary>
@@ -145,7 +148,14 @@ namespace Digbyswift.Utils.Extensions
 			if (value == null)
 				return null;
 
-			var reExcessHyphens = new Regex(String.Format("{0}+", characterToReplace));
+            string workingCharacterToReplace = characterToReplace.ToString();
+
+            if (ReservedRegexChars.Contains(characterToReplace))
+            {
+                workingCharacterToReplace = String.Format(@"\{0}", characterToReplace);
+            }
+
+            var reExcessHyphens = new Regex(String.Format("{0}+", workingCharacterToReplace));
 			return reExcessHyphens.Replace(value, characterToReplaceWith.ToString());
 		}
 
