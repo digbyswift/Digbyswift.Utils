@@ -51,6 +51,11 @@ namespace Digbyswift.Utils.Extensions
             return displayName;
         }
 
-
+	    public static T GetAttribute<T>(this Enum @enum)
+        {
+            Type type = @enum.GetType();
+            FieldInfo field = type.GetField(@enum.ToString());
+            return field.GetCustomAttributes(typeof(T), true).Cast<T>().FirstOrDefault();
+        }
     }
 }

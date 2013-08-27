@@ -22,6 +22,17 @@ namespace Digbyswift.Utils.Extensions.Net
             return value.ServerVariables[ServerVariables.RemoteAddr];
         }
 
+        public static string GetCurrentIp(this HttpRequestBase value)
+        {
+            string workingIp = value.ServerVariables[ServerVariables.HttpXForwardedFor];
+
+            //If there is no proxy, get the standard remote address
+            if (workingIp.TrimToNull() != null && workingIp.ToUpperInvariant() != "UNKNOWN")
+                return workingIp;
+
+            return value.ServerVariables[ServerVariables.RemoteAddr];
+        }
+
 		/// <summary>
 		/// Specifies whether the current HttpRequest object has a Referrer
 		/// </summary>
