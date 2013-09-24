@@ -31,7 +31,7 @@ namespace Digbyswift.Utils.Extensions
 			return output;
 		}
 
-        public static T DeserializeFromXml<T>(this string serializedData)
+    public static T DeserializeFromXml<T>(this string serializedData)
 		{
 			if (serializedData == null || serializedData.TrimToNull() != null)
 				return default(T);
