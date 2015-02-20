@@ -33,12 +33,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,6 +67,7 @@
     <Compile Include="Extensions\CultureInfoExtensions.cs" />
     <Compile Include="Extensions\ResourceSetExtensions.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Http\UrlHelper.cs" />
     <Compile Include="Security\EncryptionHelper.cs" />
     <Compile Include="Security\FileEncryptionHelper.cs" />
     <Compile Include="Security\Enums.cs" />
@@ -76,7 +79,7 @@
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Security\RandomPasskey.cs" />
-    <Compile Include="Extensions\Net\UrlExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
     <Compile Include="Extensions\Validation\StringValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
