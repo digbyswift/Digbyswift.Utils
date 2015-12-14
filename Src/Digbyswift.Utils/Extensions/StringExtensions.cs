@@ -9,7 +9,9 @@ namespace Digbyswift.Utils.Extensions
 	public static class StringExtensions
 	{
 
-        private static readonly char[] ReservedRegexChars = new[] { '[', '\\', '^', '$', '.', '|', '*', '+', '?', '(', ')' };
+        private static readonly char[] ReservedRegexChars = { '[', '\\', '^', '$', '.', '|', '*', '+', '?', '(', ')' };
+		private static readonly Regex NonUrlFriendyRegex = new Regex(@"([^a-z0-9\-]+)", RegexOptions.IgnoreCase);
+		private static readonly Regex UrlUnfriendlyCharRegex = new Regex(@"([’']+)");
 
 
 		#region Methods: ToTitleCase
@@ -199,7 +201,7 @@ namespace Digbyswift.Utils.Extensions
 		/// </summary>
 		public static bool IsUrlFriendly(this string value)
 		{
-			return !new Regex("([^a-z0-9_]+)").IsMatch(value);
+			return !NonUrlFriendyRegex.IsMatch(value);
 		}
 
 		/// <summary>
@@ -215,8 +217,11 @@ namespace Digbyswift.Utils.Extensions
 			// Remove excess whitespace
 			workingString = workingString.TrimWithin();
 
+			// Removes characters that will misformat the output string
+			workingString = UrlUnfriendlyCharRegex.Replace(workingString, String.Empty);
+			
 			// Replace non URL-friendly characters
-			workingString = Regex.Replace(workingString.ToLower(), "([^a-z0-9_]+)", "-");
+			workingString = NonUrlFriendyRegex.Replace(workingString, "-");
 
 			return workingString.ReplaceExcess('-', '-').Trim('-');
 		}

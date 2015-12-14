@@ -48,7 +48,7 @@ namespace Digbyswift.Utils.Extensions
         /// <param name="ignoreKeys">The keys to ignore. These will be treated case-insensitively.</param>
         public static string ToQueryString(this IDictionary<string, string> value, string[] ignoreKeys)
         {
-            string[] lowerCaseKeys = (from key in ignoreKeys select key.ToLower()).ToArray();
+            var lowerCaseKeys = ignoreKeys == null ? new string[] { } : ignoreKeys.Where(x => !String.IsNullOrEmpty(x)).Select(x => x.ToLower());
 
             return HttpUtility.UrlDecode(
                 String.Join("&",
